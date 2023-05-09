@@ -1,0 +1,15 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.TcpSocketPlugin.cpp.obj": [
+			"SocketLibrary.gen.cpp.obj",
+			"TcpSocketConnection.gen.cpp.obj",
+			"TcpSocketPlugin.init.gen.cpp.obj",
+			"TcpSocketSettings.gen.cpp.obj",
+			"SocketLibrary.cpp.obj",
+			"TcpSocketConnection.cpp.obj",
+			"TcpSocketPlugin.cpp.obj",
+			"TcpSocketSettings.cpp.obj"
+		]
+	}
+}

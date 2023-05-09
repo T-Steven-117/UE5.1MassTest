@@ -1,0 +1,8 @@
+{
+	"BuildId": "23058290",
+	"Modules": 
+	{
+		"EasyRealtyEditor": "UnrealEditor-EasyRealtyEditor.dll",
+		"EasyRealtyRuntime": "UnrealEditor-EasyRealtyRuntime.dll"
+	}
+}

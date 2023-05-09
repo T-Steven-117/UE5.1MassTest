@@ -1,0 +1,35 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\myprojects\\g510\\plugins\\tcpsocket\\intermediate\\build\\win64\\unrealeditor\\debuggame\\tcpsocketplugin\\module.tcpsocketplugin.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\myprojects\\g510\\intermediate\\build\\win64\\g510editor\\debuggame\\engine\\sharedpch.engine.nonoptimized.shadowerrors.h.pch",
+        "Includes": [
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\intermediate\\build\\win64\\unrealeditor\\debuggame\\tcpsocketplugin\\definitions.tcpsocketplugin.h",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\intermediate\\build\\win64\\unrealeditor\\inc\\tcpsocketplugin\\uht\\socketlibrary.gen.cpp",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\source\\tcpsocketplugin\\public\\socketlibrary.h",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\intermediate\\build\\win64\\unrealeditor\\inc\\tcpsocketplugin\\uht\\socketlibrary.generated.h",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\intermediate\\build\\win64\\unrealeditor\\inc\\tcpsocketplugin\\uht\\tcpsocketconnection.gen.cpp",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\source\\tcpsocketplugin\\public\\tcpsocketconnection.h",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\intermediate\\build\\win64\\unrealeditor\\inc\\tcpsocketplugin\\uht\\tcpsocketconnection.generated.h",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\intermediate\\build\\win64\\unrealeditor\\inc\\tcpsocketplugin\\uht\\tcpsocketplugin.init.gen.cpp",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\intermediate\\build\\win64\\unrealeditor\\inc\\tcpsocketplugin\\uht\\tcpsocketsettings.gen.cpp",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\source\\tcpsocketplugin\\public\\tcpsocketsettings.h",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\intermediate\\build\\win64\\unrealeditor\\inc\\tcpsocketplugin\\uht\\tcpsocketsettings.generated.h",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\source\\tcpsocketplugin\\private\\socketlibrary.cpp",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\source\\tcpsocketplugin\\private\\tcpsocketconnection.cpp",
+            "c:\\program files\\epicengine\\ue_5.1\\engine\\source\\runtime\\sockets\\public\\socketsubsystem.h",
+            "c:\\program files\\epicengine\\ue_5.1\\engine\\source\\runtime\\sockets\\public\\addressinfotypes.h",
+            "c:\\program files\\epicengine\\ue_5.1\\engine\\source\\runtime\\networking\\public\\interfaces\\ipv4\\ipv4address.h",
+            "c:\\program files\\epicengine\\ue_5.1\\engine\\source\\runtime\\networking\\public\\interfaces\\ipv4\\ipv4subnetmask.h",
+            "c:\\program files\\epicengine\\ue_5.1\\engine\\source\\runtime\\sockets\\public\\sockets.h",
+            "c:\\program files\\microsoft visual studio\\2022\\community\\vc\\tools\\msvc\\14.33.31629\\include\\string",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\source\\tcpsocketplugin\\private\\tcpsocketplugin.cpp",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\source\\tcpsocketplugin\\public\\tcpsocketplugin.h",
+            "c:\\program files\\epicengine\\ue_5.1\\engine\\source\\developer\\settings\\public\\isettingsmodule.h",
+            "d:\\myprojects\\g510\\plugins\\tcpsocket\\source\\tcpsocketplugin\\private\\tcpsocketsettings.cpp"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

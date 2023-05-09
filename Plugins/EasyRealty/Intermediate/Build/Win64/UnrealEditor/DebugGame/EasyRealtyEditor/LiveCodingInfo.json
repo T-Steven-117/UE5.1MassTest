@@ -1,0 +1,45 @@
+{
+	"RemapUnityFiles": 
+	{
+		"Module.EasyRealtyEditor.cpp.obj": [
+			"CommentsNodeAction.gen.cpp.obj",
+			"EasyRealtyEditor.init.gen.cpp.obj",
+			"EntryNode.gen.cpp.obj",
+			"EntryNodeAction.gen.cpp.obj",
+			"K3EdGraphNode.gen.cpp.obj",
+			"RealtyAssetFactory.gen.cpp.obj",
+			"RealtyEdGraph.gen.cpp.obj",
+			"RealtyEdGraphSchema.gen.cpp.obj",
+			"RealtyEditorSlateStyle.gen.cpp.obj",
+			"StringNode.gen.cpp.obj",
+			"TravelNode.gen.cpp.obj",
+			"TravelNodeAction.gen.cpp.obj",
+			"VariableNode.gen.cpp.obj",
+			"VariableNodeAction.gen.cpp.obj",
+			"EasyRealtyEditor.cpp.obj",
+			"Complier.cpp.obj",
+			"RealtyConnectionDrawingPolicy.cpp.obj",
+			"GraphFactory.cpp.obj",
+			"GraphTools.cpp.obj",
+			"CommentsNodeAction.cpp.obj",
+			"EntryNode.cpp.obj",
+			"EntryNodeAction.cpp.obj",
+			"SEntryNode.cpp.obj",
+			"K3EdGraphNode.cpp.obj",
+			"STravelNode.cpp.obj",
+			"TravelNode.cpp.obj",
+			"TravelNodeAction.cpp.obj",
+			"StringNode.cpp.obj",
+			"SVariableNode.cpp.obj",
+			"VariableNode.cpp.obj",
+			"VariableNodeAction.cpp.obj",
+			"RealtyEdGraph.cpp.obj",
+			"RealtyEdGraphSchema.cpp.obj",
+			"RealtyAssetFactory.cpp.obj",
+			"RealtyEditorSlateStyle.cpp.obj",
+			"RealtyAssetToolKitAction.cpp.obj",
+			"RealtyAssetToolKitCommand.cpp.obj",
+			"RealtyAssetToolKitEditor.cpp.obj"
+		]
+	}
+}

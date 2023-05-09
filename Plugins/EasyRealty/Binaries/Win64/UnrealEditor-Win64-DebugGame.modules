@@ -1,0 +1,8 @@
+{
+	"BuildId": "3e7fe9e2-ada7-49b5-8d51-df724068213e",
+	"Modules": 
+	{
+		"EasyRealtyEditor": "UnrealEditor-EasyRealtyEditor-Win64-DebugGame.dll",
+		"EasyRealtyRuntime": "UnrealEditor-EasyRealtyRuntime-Win64-DebugGame.dll"
+	}
+}

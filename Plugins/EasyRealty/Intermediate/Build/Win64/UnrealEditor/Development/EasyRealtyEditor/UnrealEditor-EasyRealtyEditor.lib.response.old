@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-EasyRealtyEditor.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\MyProjects\Project_ShangTou\Intermediate\Build\Win64\Project_ShangTouEditor\Development\UnrealEd\SharedPCH.UnrealEd.ShadowErrors.h.obj"
+"D:\MyProjects\Project_ShangTou\Plugins\EasyRealty\Intermediate\Build\Win64\UnrealEditor\Development\EasyRealtyEditor\Module.EasyRealtyEditor.cpp.obj"
+"D:\MyProjects\Project_ShangTou\Plugins\EasyRealty\Intermediate\Build\Win64\UnrealEditor\Development\EasyRealtyEditor\Default.rc2.res"
+/OUT:"D:\MyProjects\Project_ShangTou\Plugins\EasyRealty\Intermediate\Build\Win64\UnrealEditor\Development\EasyRealtyEditor\UnrealEditor-EasyRealtyEditor.lib"

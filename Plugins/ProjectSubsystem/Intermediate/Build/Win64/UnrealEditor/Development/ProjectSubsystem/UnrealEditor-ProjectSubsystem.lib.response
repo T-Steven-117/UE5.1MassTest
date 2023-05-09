@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-ProjectSubsystem.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\MyProjects\G510\Intermediate\Build\Win64\G510Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\MyProjects\G510\Plugins\ProjectSubsystem\Intermediate\Build\Win64\UnrealEditor\Development\ProjectSubsystem\Module.ProjectSubsystem.cpp.obj"
+"D:\MyProjects\G510\Plugins\ProjectSubsystem\Intermediate\Build\Win64\UnrealEditor\Development\ProjectSubsystem\Default.rc2.res"
+/OUT:"D:\MyProjects\G510\Plugins\ProjectSubsystem\Intermediate\Build\Win64\UnrealEditor\Development\ProjectSubsystem\UnrealEditor-ProjectSubsystem.lib"

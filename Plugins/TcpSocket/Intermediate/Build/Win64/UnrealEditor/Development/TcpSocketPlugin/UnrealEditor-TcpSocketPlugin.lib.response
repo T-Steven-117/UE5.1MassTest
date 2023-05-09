@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-TcpSocketPlugin.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\MyProjects\G510\Intermediate\Build\Win64\G510Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.obj"
+"D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\Development\TcpSocketPlugin\Module.TcpSocketPlugin.cpp.obj"
+"D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\Development\TcpSocketPlugin\Default.rc2.res"
+/OUT:"D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\Development\TcpSocketPlugin\UnrealEditor-TcpSocketPlugin.lib"

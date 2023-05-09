@@ -1,0 +1,12 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UnrealEditor-EasyRealtyRuntime-Win64-DebugGame.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\MyProjects\G510\Intermediate\Build\Win64\G510Editor\DebugGame\UnrealEd\SharedPCH.UnrealEd.NonOptimized.ShadowErrors.h.obj"
+"D:\MyProjects\G510\Plugins\EasyRealty\Intermediate\Build\Win64\UnrealEditor\DebugGame\EasyRealtyRuntime\Module.EasyRealtyRuntime.cpp.obj"
+"D:\MyProjects\G510\Plugins\EasyRealty\Intermediate\Build\Win64\UnrealEditor\DebugGame\EasyRealtyRuntime\Default.rc2.res"
+/OUT:"D:\MyProjects\G510\Plugins\EasyRealty\Intermediate\Build\Win64\UnrealEditor\DebugGame\EasyRealtyRuntime\UnrealEditor-EasyRealtyRuntime-Win64-DebugGame.lib"
