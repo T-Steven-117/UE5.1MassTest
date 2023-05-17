@@ -502,7 +502,7 @@ void UTravelNode::PinConnectionListChanged(UEdGraphPin* Pin)
 									Value = pp->DefaultValue;
 
 									FStrProperty* StrProperty = CastField<FStrProperty>(Prop);
-									StrProperty->ImportText(*Value, StrProperty->ContainerPtrToValuePtr<void*>(&RealtyDataNode), PPF_None,nullptr);
+									StrProperty->ImportText_Direct(*Value, StrProperty->ContainerPtrToValuePtr<void*>(&RealtyDataNode), nullptr, PPF_None);
 
 									Rebuild_DependOnPointTargetClassNodes();
 									Rebuild_DependOnTargetSequencNodes();
@@ -528,7 +528,7 @@ void UTravelNode::PinConnectionListChanged(UEdGraphPin* Pin)
 						if (Prop->IsA(FStrProperty::StaticClass()))
 						{
 							FStrProperty* StrProperty = CastField<FStrProperty>(Prop);
-							StrProperty->ImportText(*Value, StrProperty->ContainerPtrToValuePtr<void*>(&RealtyDataNode), PPF_None, nullptr);
+							StrProperty->ImportText_Direct(*Value, StrProperty->ContainerPtrToValuePtr<void*>(&RealtyDataNode), nullptr, PPF_None);
 					
 							Rebuild_DependOnPointTargetClassNodes();
 							Rebuild_DependOnTargetSequencNodes();

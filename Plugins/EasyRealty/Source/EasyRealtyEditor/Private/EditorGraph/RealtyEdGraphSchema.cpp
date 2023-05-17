@@ -160,7 +160,8 @@ void URealtyEdGraphSchema::GetContextMenuActions(class UToolMenu* Menu, class UG
 							PawnSequence->PlaybackSettings.bRestoreState = true;
 							PawnSequence->PlaybackSettings.bPauseAtEnd = true;
 							PawnSequence->SequencePlayer = NewObject<ULevelSequencePlayer>(PawnSequence);
-							PawnSequence->SequencePlayer->Initialize(LoadObject<ULevelSequence>(GWorld, *nn->RealtyDataNode.TargetSequenceSoftPath), PawnSequence->GetLevel(), PawnSequence->PlaybackSettings, PawnSequence->CameraSettings);
+							PawnSequence->SequencePlayer->SetPlaybackSettings(PawnSequence->PlaybackSettings);
+							PawnSequence->SequencePlayer->Initialize(LoadObject<ULevelSequence>(GWorld, *nn->RealtyDataNode.TargetSequenceSoftPath), PawnSequence->GetLevel(), PawnSequence->CameraSettings);
 
 							FMovieSceneSequencePlaybackParams MovieSceneSequencePlaybackParams;
 							MovieSceneSequencePlaybackParams.Time = 0;
