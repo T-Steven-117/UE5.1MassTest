@@ -8,9 +8,5 @@
 /NODEFAULTLIB
 "D:\MyProjects\G510\Intermediate\Build\Win64\G510Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.obj"
 "D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\DebugGame\TcpSocketPlugin\Module.TcpSocketPlugin.cpp.obj"
-"D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\DebugGame\TcpSocketPlugin\SocketLibrary.gen.cpp.obj"
-"D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\DebugGame\TcpSocketPlugin\TcpSocketConnection.gen.cpp.obj"
-"D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\DebugGame\TcpSocketPlugin\TcpSocketPlugin.init.gen.cpp.obj"
-"D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\DebugGame\TcpSocketPlugin\TcpSocketSettings.gen.cpp.obj"
 "D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\DebugGame\TcpSocketPlugin\Default.rc2.res"
 /OUT:"D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\DebugGame\TcpSocketPlugin\UnrealEditor-TcpSocketPlugin-Win64-DebugGame.lib"

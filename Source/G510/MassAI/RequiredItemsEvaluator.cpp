@@ -18,7 +18,7 @@
 #include "SmartObjectSubsystem.h"
 #include "SmartObjectComponent.h"
 #include "GameplayTagContainer.h"
-
+#include "SmartObjectSubsystem.h"
 
 void FRequiredItemsEvaluator::TreeStart(FStateTreeExecutionContext& Context) const
 {
@@ -218,7 +218,7 @@ EStateTreeRunStatus FClaimSmartObjectTask::EnterState(FStateTreeExecutionContext
 	}
 
 	SOUser.InteractionHandle= InstanceDataType.ClaimHandle;
-	SOUser.InteractionStatus= EMassSmartObjectInteractionStatus::Unset;
+	SOUser.InteractionStatus= EMassSmartObjectInteractionStatus::InProgress;
 	const FTransform Transform=SmartObjectSubsystem.GetSlotTransform(SOUser.InteractionHandle).Get(FTransform::Identity);
 	SmartObjectSubsystem.GetSmartObjectComponent(SOUser.InteractionHandle)->SetWorldLocation(Transform.GetLocation());
 
@@ -242,32 +242,6 @@ bool FMoveTargetTask::Link(FStateTreeLinker& Linker)
 EStateTreeRunStatus FMoveTargetTask::EnterState(FStateTreeExecutionContext& Context, const FStateTreeTransitionResult& Transition) const
 {
 
-	//FMassMoveTargetFragment& MoveTarget = Context.GetExternalData(MoveTargetHandle);
-	//const FMassSmartObjectUserFragment& SOuserFragment = Context.GetExternalData(SOUserHandle);
-	//const FMassMovementParameters& MoveParameters = Context.GetExternalData(MoveParametersHandle);
-	//USmartObjectSubsystem* SmartObjectSubsystem = Context.GetWorld()->GetSubsystem<USmartObjectSubsystem>();
-	//UMassSignalSubsystem& SignalSubsystem = Context.GetExternalData(MassSignalSubsystemHandle);
-
-	//if (!SOuserFragment.InteractionHandle.SmartObjectHandle.IsValid())
-	//	 return EStateTreeRunStatus::Failed;
-	//GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Red, TEXT("FMoveTargetTask::EnterState"));
-
-	//MoveTarget.Center = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetComponentTransform().GetLocation();
-	//MoveTarget.Forward = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetOwner()->GetActorForwardVector();
-	//MoveTarget.SlackRadius = 25.f;
-	//MoveTarget.DesiredSpeed.Set(MoveParameters.DefaultDesiredSpeed);
-	//MoveTarget.CreateNewAction(EMassMovementAction::Move, *Context.GetWorld());
-	//MoveTarget.IntentAtGoal = EMassMovementAction::Stand;
-
-	/*const FTransform& Transform = Context.GetExternalData(TransformHandle).GetTransform();
-	MoveTarget.DistanceToGoal = (MoveTarget.Center - Transform.GetLocation()).Length();
-	MoveTarget.Forward = (MoveTarget.Center - Transform.GetLocation()).GetSafeNormal();*/
-
-	return EStateTreeRunStatus::Running;
-}
-
-EStateTreeRunStatus FMoveTargetTask::Tick(FStateTreeExecutionContext& Context, const float DeltaTime) const
-{
 	FMassMoveTargetFragment& MoveTarget = Context.GetExternalData(MoveTargetHandle);
 	const FMassSmartObjectUserFragment& SOuserFragment = Context.GetExternalData(SOUserHandle);
 	const FMassMovementParameters& MoveParameters = Context.GetExternalData(MoveParametersHandle);
@@ -278,9 +252,9 @@ EStateTreeRunStatus FMoveTargetTask::Tick(FStateTreeExecutionContext& Context, c
 		return EStateTreeRunStatus::Failed;
 	GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Red, TEXT("FMoveTargetTask::EnterState"));
 
-	MoveTarget.Center = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetComponentTransform().GetLocation();
-	MoveTarget.Forward = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetOwner()->GetActorForwardVector();
-	MoveTarget.SlackRadius = 25.f;
+	MoveTarget.Center = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetComponentLocation();
+	MoveTarget.Forward = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetForwardVector();
+	MoveTarget.SlackRadius = 100.f;
 	MoveTarget.DesiredSpeed.Set(MoveParameters.DefaultDesiredSpeed);
 	MoveTarget.CreateNewAction(EMassMovementAction::Move, *Context.GetWorld());
 	MoveTarget.IntentAtGoal = EMassMovementAction::Stand;
@@ -289,11 +263,22 @@ EStateTreeRunStatus FMoveTargetTask::Tick(FStateTreeExecutionContext& Context, c
 	MoveTarget.DistanceToGoal = (MoveTarget.Center - Transform.GetLocation()).Length();
 	MoveTarget.Forward = (MoveTarget.Center - Transform.GetLocation()).GetSafeNormal();
 
-	if (MoveTarget.DistanceToGoal <= MoveTarget.SlackRadius + 100.f)
+	if (MoveTarget.DistanceToGoal <= MoveTarget.SlackRadius)
 	{
 		MoveTarget.CreateNewAction(EMassMovementAction::Stand, *Context.GetWorld());
 		return EStateTreeRunStatus::Succeeded;
 	}
+	return EStateTreeRunStatus::Failed;
+}
+
+EStateTreeRunStatus FMoveTargetTask::Tick(FStateTreeExecutionContext& Context, const float DeltaTime) const
+{
+	FMassMoveTargetFragment& MoveTarget = Context.GetExternalData(MoveTargetHandle);
+	const FTransform& Transform = Context.GetExternalData(TransformHandle).GetTransform();
+	MoveTarget.DistanceToGoal = (MoveTarget.Center - Transform.GetLocation()).Length();
+	MoveTarget.Forward = (MoveTarget.Center - Transform.GetLocation()).GetSafeNormal();
+	GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Red, FString::Printf(TEXT("%f"), MoveTarget.DistanceToGoal));
+
 
 	return EStateTreeRunStatus::Running;
 }
