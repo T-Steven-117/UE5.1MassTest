@@ -7,7 +7,7 @@
 #include "ItemTrait.h"
 #include "MassSmartObjectBehaviorDefinition.h"
 
-bool FCheckResourceAndItem::Link(FStateTreeLinker& Linker)
+bool FCheckItemsEvaluator::Link(FStateTreeLinker& Linker)
 {
 	Linker.LinkExternalData(AgentHandle);
 	Linker.LinkExternalData(TransformHandle);
@@ -20,11 +20,13 @@ bool FCheckResourceAndItem::Link(FStateTreeLinker& Linker)
 
 
 
-EStateTreeRunStatus FCheckResourceAndItem::EnterState(FStateTreeExecutionContext& Context, const FStateTreeTransitionResult& Transition) const
+
+
+void FCheckItemsEvaluator::Tick(FStateTreeExecutionContext& Context, const float DeltaTime) const
 {
 	FAgentFragment& Agent = Context.GetExternalData(AgentHandle);
 	USmartObjectSubsystem& SmartObjectSubsystem = Context.GetExternalData(SmartObjectSubsystemHandle);
-
+	Agent.ResourceHandle.Invalidate();
 	UMassEntitySubsystem& EntitySubsystem = Context.GetExternalData(EntitySubsystemHandle);
 	const FVector& Location = Context.GetExternalData(TransformHandle).GetTransform().GetLocation();
 	UBuildingSubsystem& BuildingSubsystem = Context.GetExternalData(BuildingSubsystemHandle);
@@ -54,7 +56,6 @@ EStateTreeRunStatus FCheckResourceAndItem::EnterState(FStateTreeExecutionContext
 			{
 				ItemFragment->bClaimed = true;
 			}
-			return EStateTreeRunStatus::Succeeded;;
 		}
 	}
 	//代理正在等待命令？
@@ -65,23 +66,22 @@ EStateTreeRunStatus FCheckResourceAndItem::EnterState(FStateTreeExecutionContext
 		{
 			TArray<FMassEntityHandle> ItemHandles;
 			ItemHandles.AddUninitialized(2);
-			if (BuildingSubsystem.FindItem(Location, 5000.f, Stone, ItemHandles[0]))
-			{
-				if (BuildingSubsystem.FindItem(Location, 5000.f, Tree, ItemHandles[1]))
+			if (BuildingSubsystem.FindItem(Location, 5000.f, Tree, ItemHandles[0]))
+			{		
+				if (BuildingSubsystem.FindItem(Location, 5000.f, Stone, ItemHandles[1]))
 				{
 					InstanceData.bFoundItemHandle = true;
 					BuildingSubsystem.ClaimFloor(Agent.BuildingHandle);
+					Agent.QueuedItems.Emplace(ItemHandles[1]);
 
-
-					Agent.QueuedItems.Append(ItemHandles);
 					InstanceData.ItemHandle = Agent.QueuedItems.Pop();
 					FItemFragment* ItemFragment = EntityManager.GetFragmentDataPtr<FItemFragment>(InstanceData.ItemHandle);
 					if (ItemFragment)
 					{
 						ItemFragment->bClaimed = true;
 					}
-					return EStateTreeRunStatus::Succeeded;;
 				}
+						
 			}
 		}
 	}
@@ -90,7 +90,6 @@ EStateTreeRunStatus FCheckResourceAndItem::EnterState(FStateTreeExecutionContext
 	{
 		InstanceData.bfoundSmartObject = true;
 		InstanceData.SmartObjectHandle = Agent.BuildingHandle;
-		return EStateTreeRunStatus::Succeeded;
 	}
 	//没有资源没有需要建造，查看是否有排队的资源
 	TArray<FSmartObjectHandle>QueueResources;
@@ -102,10 +101,5 @@ EStateTreeRunStatus FCheckResourceAndItem::EnterState(FStateTreeExecutionContext
 		BuildingSubsystem.ClaimResource(ResourceHandle);
 		Agent.ResourceHandle = ResourceHandle;
 		InstanceData.SmartObjectHandle = ResourceHandle;
-		return EStateTreeRunStatus::Succeeded;
 	}
-	return EStateTreeRunStatus::Running;
-
 }
-
-

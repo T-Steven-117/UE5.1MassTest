@@ -8,7 +8,7 @@
 #include "K2Node_MyPrint.h"
 #include "ScopedTransaction.h"
 
-FReply GraphNode_Printf::OnAddPin()
+FReply SGraphNode_Printf::OnAddPin()
 {
 	UK2Node_MyPrint* BPNode = CastChecked<UK2Node_MyPrint>(GraphNode);
 
@@ -24,7 +24,7 @@ FReply GraphNode_Printf::OnAddPin()
 	return FReply::Handled();
 }
 
-void GraphNode_Printf::CreateInputSideAddButton(TSharedPtr<SVerticalBox> InputBox)
+void SGraphNode_Printf::CreateInputSideAddButton(TSharedPtr<SVerticalBox> InputBox)
 {
 	FText AddPinName = FText::FromString(TEXT("Add Pin"));
 	FText RemovePinName = FText::FromString(TEXT("Remove Pin"));
@@ -44,7 +44,7 @@ void GraphNode_Printf::CreateInputSideAddButton(TSharedPtr<SVerticalBox> InputBo
 		];
 }
 
-void GraphNode_Printf::Construct(const FArguments& InArgs, UEdGraphNode* InNode)
+void SGraphNode_Printf::Construct(const FArguments& InArgs, UEdGraphNode* InNode)
 {
 	this->GraphNode = InNode;
 

@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define EASYREALTYEDITOR_VariableNodeAction_generated_h
 
-#define FID_MyProjects_G510_Plugins_EasyRealty_Source_EasyRealtyEditor_Public_EditorGraph_Node_VariableNode_VariableNodeAction_h_13_GENERATED_BODY \
+#define FID_G510_Plugins_EasyRealty_Source_EasyRealtyEditor_Public_EditorGraph_Node_VariableNode_VariableNodeAction_h_13_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FVariableNodeAction_Statics; \
 	EASYREALTYEDITOR_API static class UScriptStruct* StaticStruct(); \
 	typedef FEdGraphSchemaAction Super;
@@ -23,7 +23,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 template<> EASYREALTYEDITOR_API UScriptStruct* StaticStruct<struct FVariableNodeAction>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_MyProjects_G510_Plugins_EasyRealty_Source_EasyRealtyEditor_Public_EditorGraph_Node_VariableNode_VariableNodeAction_h
+#define CURRENT_FILE_ID FID_G510_Plugins_EasyRealty_Source_EasyRealtyEditor_Public_EditorGraph_Node_VariableNode_VariableNodeAction_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

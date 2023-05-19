@@ -14,7 +14,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define TCPSOCKETPLUGIN_TcpSocketConnection_generated_h
 
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_13_DELEGATE \
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_13_DELEGATE \
 struct _Script_TcpSocketPlugin_eventTcpSocketDisconnectDelegate_Parms \
 { \
 	int32 ConnectionId; \
@@ -27,7 +27,7 @@ static inline void FTcpSocketDisconnectDelegate_DelegateWrapper(const FScriptDel
 }
 
 
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_14_DELEGATE \
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_14_DELEGATE \
 struct _Script_TcpSocketPlugin_eventTcpSocketConnectDelegate_Parms \
 { \
 	int32 ConnectionId; \
@@ -40,7 +40,7 @@ static inline void FTcpSocketConnectDelegate_DelegateWrapper(const FScriptDelega
 }
 
 
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_15_DELEGATE \
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_15_DELEGATE \
 struct _Script_TcpSocketPlugin_eventTcpSocketReceivedMessageDelegate_Parms \
 { \
 	int32 ConnectionId; \
@@ -56,8 +56,8 @@ static inline void FTcpSocketReceivedMessageDelegate_DelegateWrapper(const FScri
 }
 
 
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_SPARSE_DATA
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_RPC_WRAPPERS \
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_SPARSE_DATA
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execisConnected); \
 	DECLARE_FUNCTION(execMessage_ReadString); \
@@ -75,7 +75,7 @@ static inline void FTcpSocketReceivedMessageDelegate_DelegateWrapper(const FScri
 	DECLARE_FUNCTION(execConnect);
 
 
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execisConnected); \
 	DECLARE_FUNCTION(execMessage_ReadString); \
@@ -93,8 +93,8 @@ static inline void FTcpSocketReceivedMessageDelegate_DelegateWrapper(const FScri
 	DECLARE_FUNCTION(execConnect);
 
 
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_ACCESSORS
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_INCLASS_NO_PURE_DECLS \
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_ACCESSORS
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesATcpSocketConnection(); \
 	friend struct Z_Construct_UClass_ATcpSocketConnection_Statics; \
@@ -103,7 +103,7 @@ public: \
 	DECLARE_SERIALIZER(ATcpSocketConnection)
 
 
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_INCLASS \
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_INCLASS \
 private: \
 	static void StaticRegisterNativesATcpSocketConnection(); \
 	friend struct Z_Construct_UClass_ATcpSocketConnection_Statics; \
@@ -112,7 +112,7 @@ public: \
 	DECLARE_SERIALIZER(ATcpSocketConnection)
 
 
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_STANDARD_CONSTRUCTORS \
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ATcpSocketConnection(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ATcpSocketConnection) \
@@ -126,7 +126,7 @@ public: \
 	NO_API virtual ~ATcpSocketConnection();
 
 
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_ENHANCED_CONSTRUCTORS \
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ATcpSocketConnection(ATcpSocketConnection&&); \
@@ -138,27 +138,27 @@ public: \
 	NO_API virtual ~ATcpSocketConnection();
 
 
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_17_PROLOG
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_GENERATED_BODY_LEGACY \
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_17_PROLOG
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_SPARSE_DATA \
-	FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_RPC_WRAPPERS \
-	FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_ACCESSORS \
-	FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_INCLASS \
-	FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_STANDARD_CONSTRUCTORS \
+	FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_SPARSE_DATA \
+	FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_RPC_WRAPPERS \
+	FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_ACCESSORS \
+	FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_INCLASS \
+	FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_GENERATED_BODY \
+#define FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_SPARSE_DATA \
-	FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_ACCESSORS \
-	FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_INCLASS_NO_PURE_DECLS \
-	FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_ENHANCED_CONSTRUCTORS \
+	FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_SPARSE_DATA \
+	FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_ACCESSORS \
+	FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_INCLASS_NO_PURE_DECLS \
+	FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h_20_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
@@ -166,7 +166,7 @@ PRAGMA_ENABLE_DEPRECATION_WARNINGS
 template<> TCPSOCKETPLUGIN_API UClass* StaticClass<class ATcpSocketConnection>();
 
 #undef CURRENT_FILE_ID
-#define CURRENT_FILE_ID FID_MyProjects_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h
+#define CURRENT_FILE_ID FID_G510_Plugins_TcpSocket_Source_TcpSocketPlugin_Public_TcpSocketConnection_h
 
 
 PRAGMA_ENABLE_DEPRECATION_WARNINGS

@@ -282,10 +282,10 @@ D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\Debug
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/FI"D:\MyProjects\G510\Intermediate\Build\Win64\G510Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
+/FI"..\Intermediate\Build\Win64\UnrealEditor\Development\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
 /FI"D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\DebugGame\TcpSocketPlugin\Definitions.TcpSocketPlugin.h"
-/Yu"D:\MyProjects\G510\Intermediate\Build\Win64\G510Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
-/Fp"D:\MyProjects\G510\Intermediate\Build\Win64\G510Editor\DebugGame\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.pch"
+/Yu"..\Intermediate\Build\Win64\UnrealEditor\Development\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h"
+/Fp"..\Intermediate\Build\Win64\UnrealEditor\Development\Engine\SharedPCH.Engine.NonOptimized.ShadowErrors.h.pch"
 /Fo"D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\DebugGame\TcpSocketPlugin\Module.TcpSocketPlugin.cpp.obj"
 /sourceDependencies D:\MyProjects\G510\Plugins\TcpSocket\Intermediate\Build\Win64\UnrealEditor\DebugGame\TcpSocketPlugin\Module.TcpSocketPlugin.cpp.dep.json
 /Zc:inline

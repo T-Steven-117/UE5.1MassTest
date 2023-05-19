@@ -2,14 +2,14 @@
 	"RemapUnityFiles": 
 	{
 		"Module.ProjectSubsystem.cpp.obj": [
-			"CacheInstanceSubsystem.gen.cpp.obj",
-			"ProjectSubsystem.init.gen.cpp.obj",
-			"StrategyPageViewModel.gen.cpp.obj",
-			"UserTopPageViewModelBase.gen.cpp.obj",
 			"StrategyPageViewModel.cpp.obj",
 			"UserTopPageViewModelBase.cpp.obj",
 			"CacheInstanceSubsystem.cpp.obj",
-			"ProjectSubsystem.cpp.obj"
+			"ProjectSubsystem.cpp.obj",
+			"CacheInstanceSubsystem.gen.cpp.obj",
+			"ProjectSubsystem.init.gen.cpp.obj",
+			"StrategyPageViewModel.gen.cpp.obj",
+			"UserTopPageViewModelBase.gen.cpp.obj"
 		]
 	}
 }

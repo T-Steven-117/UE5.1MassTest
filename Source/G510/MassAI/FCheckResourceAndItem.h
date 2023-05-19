@@ -34,15 +34,15 @@ public:
 };
 
 USTRUCT()
-struct G510_API FCheckResourceAndItem : public FMassStateTreeTaskBase
+struct G510_API FCheckItemsEvaluator : public FMassStateTreeEvaluatorBase
 {
 	GENERATED_BODY()
 		using FInstanceDataType = FCheakTaskData;
 protected:
 	virtual bool Link(FStateTreeLinker& Linker) override;
 	virtual const UStruct* GetInstanceDataType() const override { return FInstanceDataType::StaticStruct(); }
-	virtual EStateTreeRunStatus EnterState(FStateTreeExecutionContext& Context, const FStateTreeTransitionResult& Transition) const override;
-	//virtual EStateTreeRunStatus Tick(FStateTreeExecutionContext& Context, const float DeltaTime) const override;
+	//virtual EStateTreeRunStatus EnterState(FStateTreeExecutionContext& Context, const FStateTreeTransitionResult& Transition) const override;
+	virtual void Tick(FStateTreeExecutionContext& Context, const float DeltaTime) const override;
 
 
 	TStateTreeExternalDataHandle<FAgentFragment> AgentHandle;

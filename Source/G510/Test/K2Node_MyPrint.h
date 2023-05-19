@@ -10,6 +10,7 @@
 #include "BlueprintNodeSpawner.h"
 #include "Kismet2/BlueprintEditorUtils.h"
 #include "KismetNodes/SGraphNodeK2Base.h"
+#include "UObject/ObjectMacros.h"
 #include "K2Node_MyPrint.generated.h"
 
 
@@ -44,31 +45,31 @@ public:
 		}
 	}
 
-	//virtual void GetNodeContextMenuActions(class UToolMenu* Menu, class UGraphNodeContextMenuContext* Context) const override;
+	virtual void GetNodeContextMenuActions(class UToolMenu* Menu, class UGraphNodeContextMenuContext* Context) const override;
 
-	//virtual FText GetMenuCategory()const {
-	//	return FText::FromString(TEXT("BlueprintLibraryUtility|IO"));
-	//}
-	//UEdGraphPin* GetThenPin() const
-	//{
-	//	UEdGraphPin* Pin = FindPin(UEdGraphSchema_K2::PN_Then);
-	//	check(Pin == nullptr || Pin->Direction == EGPD_Output); // If pin exists, it must be output
-	//	return Pin;
-	//}
-
-
-	//virtual void ExpandNode(FKismetCompilerContext& CompilerContext, UEdGraph* SourceGraph)override;
-	//virtual void AllocateDefaultPins()override;
-	//virtual void PinDefaultValueChanged(UEdGraphPin* ChangedPin)override;
+	virtual FText GetMenuCategory()const {
+		return FText::FromString(TEXT("BlueprintLibraryUtility|IO"));
+	}
+	UEdGraphPin* GetThenPin() const
+	{
+		UEdGraphPin* Pin = FindPin(UEdGraphSchema_K2::PN_Then);
+		check(Pin == nullptr || Pin->Direction == EGPD_Output); // If pin exists, it must be output
+		return Pin;
+	}
 
 
+	virtual void ExpandNode(FKismetCompilerContext& CompilerContext, UEdGraph* SourceGraph)override;
+	virtual void AllocateDefaultPins()override;
+	virtual void PinDefaultValueChanged(UEdGraphPin* ChangedPin)override;
 
-	//void AddPinToNode();
-	//void RemoveInputPin(UEdGraphPin* Pin);
 
+
+	void AddPinToNode();
+	void RemoveInputPin(UEdGraphPin* Pin);
+#if WITH_EDITOR
 	//UFUNCTION(BlueprintCallable, meta = (CallableWithoutWorldContext = true, WorldContext = "context"))
-	//	virtual TSharedPtr<SGraphNode> CreateVisualWidget() override;
-
+		virtual TSharedPtr<SGraphNode> CreateVisualWidget() override;
+#endif
 private:
 	UPROPERTY()
 		TArray<FName> ArgPinNames;

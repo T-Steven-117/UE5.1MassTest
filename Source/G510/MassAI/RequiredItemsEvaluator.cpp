@@ -186,16 +186,13 @@ EStateTreeRunStatus FMoveToEntityTask::Tick(FStateTreeExecutionContext& Context,
 		BuildingSubsystem.ItemHashGrid.RemovePoint(ItemHandle,MoveTarget.Center);
 		return EStateTreeRunStatus::Succeeded;
 	}
-	return EStateTreeRunStatus::Running;
+	return EStateTreeRunStatus::Failed;
 }
 
 bool FClaimSmartObjectTask::Link(FStateTreeLinker& Linker)
 {
-	/*Linker.LinkExternalData(SmartObjectHandle);
-	Linker.LinkExternalData(ClaimResultHandle);*/
 	Linker.LinkExternalData(SmartObjectUser);
 	Linker.LinkExternalData(SmartObjectSubsystemHandle);
-	Linker.LinkExternalData(MassSignalSubsystemHandle);
 	return true;
 }
 
@@ -210,7 +207,6 @@ EStateTreeRunStatus FClaimSmartObjectTask::EnterState(FStateTreeExecutionContext
 	FSmartObjectRequestFilter Filter;
 	Filter.BehaviorDefinitionClasses.Add(USmartObjectMassBehaviorDefinition::StaticClass());
 
-	UMassSignalSubsystem& SignalSubsystem = Context.GetExternalData(MassSignalSubsystemHandle);
 	USmartObjectSubsystem& SmartObjectSubsystem=Context.GetExternalData(SmartObjectSubsystemHandle);
 	FMassSmartObjectUserFragment&SOUser=Context.GetExternalData(SmartObjectUser);
 
@@ -230,10 +226,6 @@ EStateTreeRunStatus FClaimSmartObjectTask::EnterState(FStateTreeExecutionContext
 	return EStateTreeRunStatus::Succeeded;
 }
 
-EStateTreeRunStatus FClaimSmartObjectTask::Tick(FStateTreeExecutionContext& Context, const float DeltaTime) const
-{
-	return EStateTreeRunStatus::Running;
-}
 
 bool FMoveTargetTask::Link(FStateTreeLinker& Linker)
 {
@@ -250,33 +242,59 @@ bool FMoveTargetTask::Link(FStateTreeLinker& Linker)
 EStateTreeRunStatus FMoveTargetTask::EnterState(FStateTreeExecutionContext& Context, const FStateTreeTransitionResult& Transition) const
 {
 
+	//FMassMoveTargetFragment& MoveTarget = Context.GetExternalData(MoveTargetHandle);
+	//const FMassSmartObjectUserFragment& SOuserFragment = Context.GetExternalData(SOUserHandle);
+	//const FMassMovementParameters& MoveParameters = Context.GetExternalData(MoveParametersHandle);
+	//USmartObjectSubsystem* SmartObjectSubsystem = Context.GetWorld()->GetSubsystem<USmartObjectSubsystem>();
+	//UMassSignalSubsystem& SignalSubsystem = Context.GetExternalData(MassSignalSubsystemHandle);
+
+	//if (!SOuserFragment.InteractionHandle.SmartObjectHandle.IsValid())
+	//	 return EStateTreeRunStatus::Failed;
+	//GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Red, TEXT("FMoveTargetTask::EnterState"));
+
+	//MoveTarget.Center = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetComponentTransform().GetLocation();
+	//MoveTarget.Forward = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetOwner()->GetActorForwardVector();
+	//MoveTarget.SlackRadius = 25.f;
+	//MoveTarget.DesiredSpeed.Set(MoveParameters.DefaultDesiredSpeed);
+	//MoveTarget.CreateNewAction(EMassMovementAction::Move, *Context.GetWorld());
+	//MoveTarget.IntentAtGoal = EMassMovementAction::Stand;
+
+	/*const FTransform& Transform = Context.GetExternalData(TransformHandle).GetTransform();
+	MoveTarget.DistanceToGoal = (MoveTarget.Center - Transform.GetLocation()).Length();
+	MoveTarget.Forward = (MoveTarget.Center - Transform.GetLocation()).GetSafeNormal();*/
+
+	return EStateTreeRunStatus::Running;
+}
+
+EStateTreeRunStatus FMoveTargetTask::Tick(FStateTreeExecutionContext& Context, const float DeltaTime) const
+{
 	FMassMoveTargetFragment& MoveTarget = Context.GetExternalData(MoveTargetHandle);
 	const FMassSmartObjectUserFragment& SOuserFragment = Context.GetExternalData(SOUserHandle);
 	const FMassMovementParameters& MoveParameters = Context.GetExternalData(MoveParametersHandle);
 	USmartObjectSubsystem* SmartObjectSubsystem = Context.GetWorld()->GetSubsystem<USmartObjectSubsystem>();
 	UMassSignalSubsystem& SignalSubsystem = Context.GetExternalData(MassSignalSubsystemHandle);
 
-	if (SOuserFragment.InteractionHandle.SmartObjectHandle.IsValid())
+	if (!SOuserFragment.InteractionHandle.SmartObjectHandle.IsValid())
+		return EStateTreeRunStatus::Failed;
+	GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Red, TEXT("FMoveTargetTask::EnterState"));
+
+	MoveTarget.Center = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetComponentTransform().GetLocation();
+	MoveTarget.Forward = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetOwner()->GetActorForwardVector();
+	MoveTarget.SlackRadius = 25.f;
+	MoveTarget.DesiredSpeed.Set(MoveParameters.DefaultDesiredSpeed);
+	MoveTarget.CreateNewAction(EMassMovementAction::Move, *Context.GetWorld());
+	MoveTarget.IntentAtGoal = EMassMovementAction::Stand;
+
+	const FTransform& Transform = Context.GetExternalData(TransformHandle).GetTransform();
+	MoveTarget.DistanceToGoal = (MoveTarget.Center - Transform.GetLocation()).Length();
+	MoveTarget.Forward = (MoveTarget.Center - Transform.GetLocation()).GetSafeNormal();
+
+	if (MoveTarget.DistanceToGoal <= MoveTarget.SlackRadius + 100.f)
 	{
-		GEngine->AddOnScreenDebugMessage(1, 5.f, FColor::Red, TEXT("FMoveTargetTask::EnterState"));
-
-		MoveTarget.Center = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetComponentTransform().GetLocation();
-		MoveTarget.Forward = SmartObjectSubsystem->GetSmartObjectComponent(SOuserFragment.InteractionHandle)->GetOwner()->GetActorForwardVector();
-		MoveTarget.SlackRadius = 25.f;
-		MoveTarget.DesiredSpeed.Set(MoveParameters.DefaultDesiredSpeed);
-		MoveTarget.CreateNewAction(EMassMovementAction::Move, *Context.GetWorld());
-		MoveTarget.IntentAtGoal = EMassMovementAction::Stand;
-
-		const FTransform& Transform = Context.GetExternalData(TransformHandle).GetTransform();
-		MoveTarget.DistanceToGoal = (MoveTarget.Center - Transform.GetLocation()).Length();
-		MoveTarget.Forward = (MoveTarget.Center - Transform.GetLocation()).GetSafeNormal();
-
-		if (MoveTarget.DistanceToGoal <= MoveTarget.SlackRadius + 100.f)
-		{
-
-			return EStateTreeRunStatus::Succeeded;
-		}
+		MoveTarget.CreateNewAction(EMassMovementAction::Stand, *Context.GetWorld());
+		return EStateTreeRunStatus::Succeeded;
 	}
+
 	return EStateTreeRunStatus::Running;
 }
 

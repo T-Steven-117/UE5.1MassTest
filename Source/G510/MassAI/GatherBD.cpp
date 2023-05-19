@@ -44,10 +44,15 @@ void UGatherBD::Deactivate(FMassCommandBuffer& CommandBuffer, const FMassBehavio
 		const FMassSmartObjectUserFragment& SoUser=EntityContext.EntityView.GetFragmentData<FMassSmartObjectUserFragment>();
 		if (USmartObjectComponent* Comp = EntityContext.SmartObjectSubsystem.GetSmartObjectComponent(SoUser.InteractionHandle))
 		{
-			CommandBuffer.PushCommand<FMassDeferredSetCommand>([&Comp, EntityContext](FMassEntityManager& System) 
+			CommandBuffer.PushCommand<FMassDeferredSetCommand>([Comp, EntityContext](FMassEntityManager& System) 
 			{
 				EntityContext.SmartObjectSubsystem.UnregisterSmartObject(*Comp);
-				Comp->GetOwner()->Destroy();
+				//Comp->GetOwner()->Destroy();
+				if (Comp)
+				{
+					Comp->GetOwner()->Destroy();
+				}
+			
 			});
 		}
 	}

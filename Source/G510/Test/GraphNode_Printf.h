@@ -11,10 +11,10 @@ class SVerticalBox;
 /**
  * 
  */
-class G510_API GraphNode_Printf : public SGraphNodeK2Base
+class G510_API SGraphNode_Printf : public SGraphNodeK2Base
 {
 public:
-	SLATE_BEGIN_ARGS(GraphNode_Printf) {}
+	SLATE_BEGIN_ARGS(SGraphNode_Printf) {}
 	SLATE_END_ARGS()
 
 		void Construct(const FArguments& InArgs, UEdGraphNode* InNode);

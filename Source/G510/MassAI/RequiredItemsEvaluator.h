@@ -128,10 +128,10 @@ protected:
 	virtual bool Link(FStateTreeLinker& Linker) override;
 	virtual const UStruct* GetInstanceDataType() const override { return FInstanceDataType::StaticStruct(); }
 	virtual EStateTreeRunStatus EnterState(FStateTreeExecutionContext& Context, const FStateTreeTransitionResult& Transition) const override;
-	virtual EStateTreeRunStatus Tick(FStateTreeExecutionContext& Context, const float DeltaTime) const override;
+	
 	TStateTreeExternalDataHandle<FMassSmartObjectUserFragment>SmartObjectUser;
 	TStateTreeExternalDataHandle<USmartObjectSubsystem>SmartObjectSubsystemHandle;
-	TStateTreeExternalDataHandle<UMassSignalSubsystem> MassSignalSubsystemHandle;
+	
 };
 
 
@@ -152,7 +152,7 @@ struct G510_API FMoveTargetTask : public FMassStateTreeTaskBase
 	virtual bool Link(FStateTreeLinker& Linker) override;
 	virtual const UStruct* GetInstanceDataType() const override { return FInstanceDataType::StaticStruct(); }
 	virtual EStateTreeRunStatus EnterState(FStateTreeExecutionContext& Context, const FStateTreeTransitionResult& Transition) const override;
-	//virtual EStateTreeRunStatus Tick(FStateTreeExecutionContext& Context, const float DeltaTime) const override;
+	virtual EStateTreeRunStatus Tick(FStateTreeExecutionContext& Context, const float DeltaTime) const override;
 protected:
 	TStateTreeExternalDataHandle<FMassMoveTargetFragment>MoveTargetHandle;
 	TStateTreeExternalDataHandle<FTransformFragment> TransformHandle;

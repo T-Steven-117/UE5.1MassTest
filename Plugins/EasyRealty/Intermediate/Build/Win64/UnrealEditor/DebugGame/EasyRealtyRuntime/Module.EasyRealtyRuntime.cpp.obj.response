@@ -284,10 +284,10 @@ D:\MyProjects\G510\Plugins\EasyRealty\Intermediate\Build\Win64\UnrealEditor\Debu
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\shared"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\um"
 /external:I "C:\Program Files (x86)\Windows Kits\10\include\10.0.19041.0\winrt"
-/FI"..\Intermediate\Build\Win64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.NonOptimized.ShadowErrors.h"
+/FI"D:\MyProjects\G510\Intermediate\Build\Win64\G510Editor\DebugGame\UnrealEd\SharedPCH.UnrealEd.NonOptimized.ShadowErrors.h"
 /FI"D:\MyProjects\G510\Plugins\EasyRealty\Intermediate\Build\Win64\UnrealEditor\DebugGame\EasyRealtyRuntime\Definitions.EasyRealtyRuntime.h"
-/Yu"..\Intermediate\Build\Win64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.NonOptimized.ShadowErrors.h"
-/Fp"..\Intermediate\Build\Win64\UnrealEditor\Development\UnrealEd\SharedPCH.UnrealEd.NonOptimized.ShadowErrors.h.pch"
+/Yu"D:\MyProjects\G510\Intermediate\Build\Win64\G510Editor\DebugGame\UnrealEd\SharedPCH.UnrealEd.NonOptimized.ShadowErrors.h"
+/Fp"D:\MyProjects\G510\Intermediate\Build\Win64\G510Editor\DebugGame\UnrealEd\SharedPCH.UnrealEd.NonOptimized.ShadowErrors.h.pch"
 /Fo"D:\MyProjects\G510\Plugins\EasyRealty\Intermediate\Build\Win64\UnrealEditor\DebugGame\EasyRealtyRuntime\Module.EasyRealtyRuntime.cpp.obj"
 /sourceDependencies D:\MyProjects\G510\Plugins\EasyRealty\Intermediate\Build\Win64\UnrealEditor\DebugGame\EasyRealtyRuntime\Module.EasyRealtyRuntime.cpp.dep.json
 /Zc:inline
